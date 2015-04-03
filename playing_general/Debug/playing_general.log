@@ -1,0 +1,140 @@
+﻿Build started 3/30/2015 12:02:30 AM.
+     1>Project "c:\Users\Brian\documents\visual studio 2010\Projects\playing_general\playing_general\playing_general.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\playing_general.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt playing_general.cpp
+         playing_general.cpp
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\playing_general.cpp(134): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\playing_general.cpp(306): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(396) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>(std::tr1::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>> &&)' being compiled
+                 with
+                 [
+                     _Car=float,
+                     _Cdr=std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>,
+                     _Arg0=double,
+                     UnaryOp=Eigen::internal::scalar_multiple_op<float>,
+                     XprType=const Eigen::Array<float,-1,-1>
+                 ]
+                 c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\playing_general.cpp(91) : see reference to function template instantiation 'std::tr1::tuple<_Arg0,_Arg1,_Arg2>::tuple<double,Eigen::CwiseUnaryOp<UnaryOp,XprType>,Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>(std::tr1::tuple<double,Eigen::CwiseUnaryOp<UnaryOp,XprType>,Eigen::CwiseUnaryOp<UnaryOp,XprType>,_Arg3,_Arg4,_Arg5,_Arg6,_Arg7,_Arg8,_Arg9> &&)' being compiled
+                 with
+                 [
+                     _Arg0=float,
+                     _Arg1=Eigen::ArrayXXf,
+                     _Arg2=Eigen::ArrayXXf,
+                     UnaryOp=Eigen::internal::scalar_multiple_op<float>,
+                     XprType=const Eigen::Array<float,-1,-1>,
+                     _Arg3=std::tr1::_Nil,
+                     _Arg4=std::tr1::_Nil,
+                     _Arg5=std::tr1::_Nil,
+                     _Arg6=std::tr1::_Nil,
+                     _Arg7=std::tr1::_Nil,
+                     _Arg8=std::tr1::_Nil,
+                     _Arg9=std::tr1::_Nil
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(396) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>(std::tr1::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>> &&)' being compiled
+                 with
+                 [
+                     _Car=float,
+                     _Cdr=std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>,
+                     _Arg0=int,
+                     UnaryOp=Eigen::internal::scalar_multiple_op<float>,
+                     XprType=const Eigen::Array<float,-1,-1>
+                 ]
+                 c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\playing_general.cpp(92) : see reference to function template instantiation 'std::tr1::tuple<_Arg0,_Arg1,_Arg2>::tuple<int,Eigen::CwiseUnaryOp<UnaryOp,XprType>,Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>(std::tr1::tuple<int,Eigen::CwiseUnaryOp<UnaryOp,XprType>,Eigen::CwiseUnaryOp<UnaryOp,XprType>,_Arg3,_Arg4,_Arg5,_Arg6,_Arg7,_Arg8,_Arg9> &&)' being compiled
+                 with
+                 [
+                     _Arg0=float,
+                     _Arg1=Eigen::ArrayXXf,
+                     _Arg2=Eigen::ArrayXXf,
+                     UnaryOp=Eigen::internal::scalar_multiple_op<float>,
+                     XprType=const Eigen::Array<float,-1,-1>,
+                     _Arg3=std::tr1::_Nil,
+                     _Arg4=std::tr1::_Nil,
+                     _Arg5=std::tr1::_Nil,
+                     _Arg6=std::tr1::_Nil,
+                     _Arg7=std::tr1::_Nil,
+                     _Arg8=std::tr1::_Nil,
+                     _Arg9=std::tr1::_Nil
+                 ]
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>(std::tr1::_Cons_node<_Arg0,_Cdr> &&)' being compiled
+                 with
+                 [
+                     _Car=float,
+                     _Cdr=std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type,
+                     _Arg0=int
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<_Car,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>(std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>> &&)' being compiled
+                 with
+                 [
+                     _Car=int,
+                     _Cdr=std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>,
+                     _Arg0=int
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>(std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>> &&)' being compiled
+                 with
+                 [
+                     _Car=Eigen::ArrayXXf,
+                     _Cdr=std::tr1::_Cons_node<int,std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>,
+                     _Arg0=Eigen::Array<float,-1,-1>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>(std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>> &&)' being compiled
+                 with
+                 [
+                     _Car=Eigen::ArrayXXf,
+                     _Cdr=std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<int,std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>,
+                     _Arg0=Eigen::Array<float,-1,-1>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(137) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>>(std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>> &&)' being compiled
+                 with
+                 [
+                     _Car=Eigen::ArrayXXf,
+                     _Cdr=std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<int,std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>,
+                     _Arg0=Eigen::Array<float,-1,-1>
+                 ]
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\tuple(396) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>>>(std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<_Car,std::tr1::_Cons_node<int,std::tr1::_Cons_node<int,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>>> &&)' being compiled
+                 with
+                 [
+                     _Car=Eigen::ArrayXXf,
+                     _Cdr=std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<Eigen::ArrayXXf,std::tr1::_Cons_node<int,std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>>>,
+                     _Arg0=Eigen::Array<float,-1,-1>
+                 ]
+                 c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\playing_general.cpp(235) : see reference to function template instantiation 'std::tr1::tuple<_Arg0,_Arg1,_Arg2,_Arg3,_Arg4,_Arg5>::tuple<Eigen::Array<_Scalar,_Rows,_Cols>,Eigen::Array<_Scalar,_Rows,_Cols>,Eigen::Array<_Scalar,_Rows,_Cols>,Eigen::Array<_Scalar,_Rows,_Cols>,int,int,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>(std::tr1::tuple<_Arg0,_Arg1,_Arg2,_Arg3,_Arg4,int,_Arg6,_Arg7,_Arg8,_Arg9> &&)' being compiled
+                 with
+                 [
+                     _Arg0=Eigen::ArrayXXf,
+                     _Arg1=Eigen::ArrayXXf,
+                     _Arg2=Eigen::ArrayXXf,
+                     _Arg3=Eigen::ArrayXXf,
+                     _Arg4=int,
+                     _Arg5=float,
+                     _Scalar=float,
+                     _Rows=-1,
+                     _Cols=-1,
+                     _Arg6=std::tr1::_Nil,
+                     _Arg7=std::tr1::_Nil,
+                     _Arg8=std::tr1::_Nil,
+                     _Arg9=std::tr1::_Nil
+                 ]
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\brian\documents\visual studio 2010\Projects\playing_general\Debug\playing_general.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\playing_general.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\brian\documents\visual studio 2010\Projects\playing_general\Debug\playing_general.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\brian\documents\visual studio 2010\Projects\playing_general\Debug\playing_general.lib" /MACHINE:X86 Debug\playing_general.exe.embed.manifest.res
+         Debug\playing_general.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\playing_general.exe.embed.manifest" /manifest Debug\playing_general.exe.intermediate.manifest
+         All outputs are up-to-date.
+       LinkEmbedManifest:
+         All outputs are up-to-date.
+         playing_general.vcxproj -> c:\users\brian\documents\visual studio 2010\Projects\playing_general\Debug\playing_general.exe
+       FinalizeBuildStatus:
+         Deleting file "Debug\playing_general.unsuccessfulbuild".
+         Touching "Debug\playing_general.lastbuildstate".
+     1>Done Building Project "c:\Users\Brian\documents\visual studio 2010\Projects\playing_general\playing_general\playing_general.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:08.29
