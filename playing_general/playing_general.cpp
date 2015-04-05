@@ -11,9 +11,8 @@ The values of the states in which the game has ended are kept fixed: 1 for a win
 At present, the game implemented is Tic-Tac-Tie on a rectangular board of any size, with
 an arbitrary number "in-a-row" required to win.  I have observed the following values leading to good
 training results:  For a 3x3 board, learning rate eps = .5, with >150,000 games played.
-For a 4x4 board, eps = .1 with 5,000,000 games played.  On my laptop, this takes about 2 minutes for a 
-3x3 board, and 10 hours for a 4x4 board.  The 3x3 numbers are somewhat optimized, the 4x4 numbers can hopefully
-come down a lot, I've just quoted what I've found so far.
+For a 4x4 board, eps = .1 with 150,000 games played.  On my laptop, this takes about 2 minutes for a 
+3x3 board, and 1 hour for a 4x4 board.
 
 When trying to win, a player AI always chooses for his move the next state with the highest value.  During
 training, however, a move has a chance to instead be chosen randomly.  The probability for this starts
@@ -46,7 +45,9 @@ randomly as appropriate.
 #include <fstream>
 #include "Game.h"
 #include "Player.h"
-#include "PlayVsAI.h"
+#include "TicTacToe.h"
+#include "ConnectFour.h"
+#include "ReadArray.h"
 
 using namespace Eigen;
 using namespace std;
@@ -65,7 +66,7 @@ if "pr" is true, the game will have all its moves written out.
 are later in a given game.  It seems fine to set this to 1 so that it doesn't do anything.
 */
 tuple<int, float> play_game(Game *pgame, Player *pplayer1, Player * pplayer2, int learner, float gamefrac, bool test, bool pr, float gamma, float eps)
-{	
+{
 	ArrayXXi state = pgame->state0;
 
 	int player_togo = 1;
@@ -107,13 +108,13 @@ tuple<int, float> play_game(Game *pgame, Player *pplayer1, Player * pplayer2, in
 		{	
 			vdv_1_state = pplayer1->value_dv(pgame, state, player_togo);
 			vdv_1_nstate = pplayer1->value_dv(pgame, new_state, player_togo);
-			//cout << "old " << get<0>(vdv_x_state) << endl;
-			//cout << "next " << get<0>(vdv_x_nstate) << endl;
+			//cout << "old " << get<0>(vdv_1_state) << endl;
+			//cout << "next " << get<0>(vdv_1_nstate) << endl;
 			theta0p1temp = pplayer1->theta0 + pow(gamma, -TotTurns) * eps * (get<0>(vdv_1_nstate) - get<0>(vdv_1_state)) * get<1>(vdv_1_state);
 			theta1p1temp = pplayer1->theta1 + pow(gamma, -TotTurns) * eps * (get<0>(vdv_1_nstate) - get<0>(vdv_1_state)) * get<2>(vdv_1_state);
 			pplayer1->theta0 = theta0p1temp;
 			pplayer1->theta1 = theta1p1temp;
-			//cout << "new " << get<0>(value_dv(gprop, state2RC, theta0x, theta1x, 1)) << endl;
+			//cout << "new " << get<0>(pplayer1->value_dv(pgame, state, player_togo)) << endl;
 		}
 		}
 		#pragma omp section
@@ -207,11 +208,13 @@ int main()
 	srand(time(0));
 	srand(rand());
 
-	TicTacToe TTTGame(3,3,3);
+	///TicTacToe TTTGame(4,9,4);
+	ConnectFour CFGame(6,7,4);
 	
-	Game * pgame = &TTTGame;
+	//Game * pgame = &TTTGame;
+	Game * pgame = &CFGame;
 
-	bool train = true;
+	bool train = false;
 	bool playAI = true;
 
 	if (train)
@@ -229,8 +232,8 @@ int main()
 		Player *pplayer1 = &player1;
 		Player *pplayer2 = &player2;
 
-		float gamma = 1; float eps = .5;
-		int NumGames = 2000000;
+		float gamma = 1; float eps = .1;
+		int NumGames = 1000000;
 		tuple<vector<float>, vector<float>> Data = learn(pgame, pplayer1, pplayer2, NumGames, gamma, eps);
 
 		ofstream x0file;
@@ -256,13 +259,10 @@ int main()
 
 	if (playAI)
 	{
-		string folder = "./";
-		int AI_player_num = -1;
-		Player AIplayer(-1);
+		string folder = "./";//"Theta44415000000p1/";
+		int AI_player_num = 1;
+		Player AIplayer(AI_player_num);
 		Player *pplayer = &AIplayer;
-		//const char* str = "theta0p2.txt";
-		//ArrayXXf theta0 = readArray(str);
-		//cout << theta0 << endl;
 		if (AIplayer.player_me == 1)
 		{
 			AIplayer.theta0 = readArray(folder + "theta0p1.txt");
@@ -273,9 +273,8 @@ int main()
 				AIplayer.theta0 = readArray(folder + "theta0p2.txt");
 				AIplayer.theta1 = readArray(folder + "theta1p2.txt");
 		}
-		play_vs_ai(pgame, pplayer, AI_player_num);
+		pgame->play_vs_ai(pplayer, AI_player_num);
 	}
-
 
 	return 0;
 }
