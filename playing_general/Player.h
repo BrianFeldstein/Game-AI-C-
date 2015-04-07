@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <vector>
 #include "Game.h"
+//#include "MoveTree.h"
+
+class MoveTree;
 
 class Player
 {

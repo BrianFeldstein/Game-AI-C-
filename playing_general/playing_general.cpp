@@ -233,7 +233,7 @@ int main()
 		Player *pplayer2 = &player2;
 
 		float gamma = 1; float eps = .1;
-		int NumGames = 1000000;
+		int NumGames = 3000000;
 		tuple<vector<float>, vector<float>> Data = learn(pgame, pplayer1, pplayer2, NumGames, gamma, eps);
 
 		ofstream x0file;
@@ -261,6 +261,7 @@ int main()
 	{
 		string folder = "./";//"Theta44415000000p1/";
 		int AI_player_num = 1;
+		int lvl = 3;
 		Player AIplayer(AI_player_num);
 		Player *pplayer = &AIplayer;
 		if (AIplayer.player_me == 1)
@@ -273,7 +274,7 @@ int main()
 				AIplayer.theta0 = readArray(folder + "theta0p2.txt");
 				AIplayer.theta1 = readArray(folder + "theta1p2.txt");
 		}
-		pgame->play_vs_ai(pplayer, AI_player_num);
+		pgame->play_vs_ai(pplayer, AI_player_num, lvl);
 	}
 
 	return 0;

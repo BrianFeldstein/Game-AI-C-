@@ -35,7 +35,7 @@ public:
 	{
 		Eigen::ArrayXXi stateRC = state.block(0,0,1,R*C) - state.block(0,R*C,1,R*C);
 			
-		std:: vector<Eigen::ArrayXXi> st_list(0);
+		std::vector<Eigen::ArrayXXi> st_list(0);
 		Eigen::ArrayXXi temp_stateRC;
 		Eigen::ArrayXXi temp_state2RC;
 
@@ -128,7 +128,7 @@ but at the moment this is not the bottleneck for speed, so I'm leaving it.
 		std::cout << "" << std::endl;
 	}
 
-	void play_vs_ai(Player * pplayer, int AI_player_num)
+	void play_vs_ai(Player * pplayer, int AI_player_num, int lvl)
 	{ 
 		int input;
 		Eigen::ArrayXXi state = state0;
