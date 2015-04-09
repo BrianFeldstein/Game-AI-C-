@@ -81,6 +81,7 @@
   <ItemGroup>
     <ClInclude Include="ConnectFour.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="MoveTree.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="ReadArray.h" />
     <ClInclude Include="TicTacToe.h" />

@@ -8,22 +8,29 @@ and the weights are updated to move the value of the current state towards the v
 The values of the states in which the game has ended are kept fixed: 1 for a win, 0 for a loss, and
 .5 for a tie.
 
-At present, the game implemented is Tic-Tac-Tie on a rectangular board of any size, with
-an arbitrary number "in-a-row" required to win.  I have observed the following values leading to good
-training results:  For a 3x3 board, learning rate eps = .5, with >150,000 games played.
+At present, the games implemented are a) Connect Four and b) Tic-Tac-Toe on a rectangular board of any
+size, with an arbitrary number "in-a-row" required to win.  I have observed the following values leading
+to good training results:  For Connect Four, 1 million games with eps = .1, requiring about 1 day of
+training.  For Tic-Tac-Toe on a 3x3 board, learning rate eps = .5, with >150,000 games played.
 For a 4x4 board, eps = .1 with 150,000 games played.  On my laptop, this takes about 2 minutes for a 
-3x3 board, and 1 hour for a 4x4 board.
+3x3 board, and 1 hour for a 4x4 board.  Longer training times than these lead to stronger play.
 
-When trying to win, a player AI always chooses for his move the next state with the highest value.  During
-training, however, a move has a chance to instead be chosen randomly.  The probability for this starts
-at 1, and decreases linearly to 0 as training progresses.  This is done so that the training adequately
-probes the full set of possible moves to find the best ones.
+During training, the AI generally chooses for its move the next state with the highest value.  This is 
+intentionally not always true, however: a move has a chance to instead be chosen randomly.  The probability
+for this starts at 1, and decreases linearly to 0 as training progresses.  This is done so that the
+training adequately probes the full set of possible moves to find the best ones.
+
+After the network is trained, when the AI plays against a human player, it then plays by looking through
+the game tree to a chosen depth, choosing an action which will maximize the value of the state to 
+be obtained, assuming that the opponent is also playing to win.  This thus combines knowledge
+from the neural network with a more brute force game tree search, leading to stronger play.
 
 The Game class contains the game rules.  These consist of
 1) An initial state, represented by an Eigen array of integers
 2) A rule which determines the legal moves, represented as a function taking a state
 to a vector of other states.
 3) A rule for deciding whether the game has ended, and if so, who has won.
+4) Some code to allow for play against a human opponent.
 
 The Player class contains the player AIs.  These consist of 
 1) The neural network weights ("thetas").
@@ -31,6 +38,9 @@ The Player class contains the player AIs.  These consist of
 with respect to the thetas)
 3) A rule for choosing the next move, either based on the state with the highest value, or
 randomly as appropriate.
+
+The Move_Tree class sets up the game tree for a given board position, and determines the best 
+move given an input search depth ("level").
 */
 
 #include <iostream>
@@ -207,15 +217,39 @@ int main()
 {
 	srand(time(0));
 	srand(rand());
-
-	///TicTacToe TTTGame(4,9,4);
-	ConnectFour CFGame(6,7,4);
 	
-	//Game * pgame = &TTTGame;
-	Game * pgame = &CFGame;
-
 	bool train = false;
 	bool playAI = true;
+	Game * pgame;
+
+	int game_val;
+	string folder;
+
+	cout << "Choose Game:" << endl;
+	cout << "0: 3x3 Tic Tac Toe"<< endl;
+	cout << "1: 4x4 Tic Tac Toe"<< endl;
+	cout << "2: Connect Four"<< endl;
+	cin >> game_val;
+		
+	if (game_val == 0)
+	{
+		//TicTacToe TTTGame(3,3,3);
+		pgame = new TicTacToe(3,3,3);//TTTGame;
+		folder = "Theta3332000000p5/";
+	}
+	else if (game_val == 1)
+	{
+		//TicTacToe TTTGame(4,4,4);
+		pgame = new TicTacToe(4,4,4);//&TTTGame;
+		folder = "Theta44415000000p1/";
+	}
+	else if (game_val == 2)
+	{
+		//ConnectFour CFGame(6,7,4);	
+		pgame = new ConnectFour(6,7,4);//&CFGame;
+		folder = "ThetaC41000000p1/";
+	}
+
 
 	if (train)
 	{
@@ -233,7 +267,7 @@ int main()
 		Player *pplayer2 = &player2;
 
 		float gamma = 1; float eps = .1;
-		int NumGames = 1000000;
+		int NumGames = 1;
 		tuple<vector<float>, vector<float>> Data = learn(pgame, pplayer1, pplayer2, NumGames, gamma, eps);
 
 		ofstream x0file;
@@ -259,8 +293,20 @@ int main()
 
 	if (playAI)
 	{
-		string folder = "./";//"Theta44415000000p1/";
-		int AI_player_num = 1;
+		int AI_player_num;
+		int lvl;
+
+		cout << "Which Player Will Be The AI?" << endl;
+		cout<< "1: Player 1" << endl;
+		cout<< "-1: Player 2" << endl;
+		cin >> AI_player_num;
+
+		cout << "Enter The AI Difficulty Level.. 0-4." << endl;
+		cin >> lvl;
+		
+		//string folder = "ThetaC41000000p1/";//"./";//"Theta44415000000p1/";
+		//int AI_player_num = 1;
+		//int lvl = 3;
 		Player AIplayer(AI_player_num);
 		Player *pplayer = &AIplayer;
 		if (AIplayer.player_me == 1)
@@ -273,8 +319,12 @@ int main()
 				AIplayer.theta0 = readArray(folder + "theta0p2.txt");
 				AIplayer.theta1 = readArray(folder + "theta1p2.txt");
 		}
-		pgame->play_vs_ai(pplayer, AI_player_num);
+		pgame->play_vs_ai(pplayer, AI_player_num, lvl);
 	}
 
-	return 0;
+	string YorN;
+	cout << "Play Again? Y or N" << endl;
+	cin >> YorN;
+	if (YorN == "Y") return main();
+	else return 0;
 }

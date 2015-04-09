@@ -4,7 +4,10 @@
 #include <eigen3\Eigen\Dense>
 #include <vector>
 #include <tuple>
-#include "Game.h"
+//#include "Game.h"
+#include "MoveTree.h"
+
+class Game;
 
 class TicTacToe: public Game
 {
@@ -35,7 +38,7 @@ public:
 	{
 		Eigen::ArrayXXi stateRC = state.block(0,0,1,R*C) - state.block(0,R*C,1,R*C);
 			
-		std:: vector<Eigen::ArrayXXi> st_list(0);
+		std::vector<Eigen::ArrayXXi> st_list(0);
 		Eigen::ArrayXXi temp_stateRC;
 		Eigen::ArrayXXi temp_state2RC;
 
@@ -128,7 +131,7 @@ but at the moment this is not the bottleneck for speed, so I'm leaving it.
 		std::cout << "" << std::endl;
 	}
 
-	void play_vs_ai(Player * pplayer, int AI_player_num)
+	void play_vs_ai(Player * pplayer, int AI_player_num, int lvl)
 	{ 
 		int input;
 		Eigen::ArrayXXi state = state0;
@@ -167,7 +170,10 @@ but at the moment this is not the bottleneck for speed, so I'm leaving it.
 			}
 			else
 			{
-				Eigen::ArrayXXi new_state = std::get<0>(pplayer->best_move(this, state, false, 1));
+				node * tp = new node(this, pplayer, state, player_togo);
+				move_tree mt(tp, lvl);
+				Eigen::ArrayXXi new_state = mt.next_state;
+				//Eigen::ArrayXXi new_state = std::get<0>(pplayer->best_move(this, state, false, 1));
 				state = new_state;
 			}
 

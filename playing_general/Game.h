@@ -16,7 +16,7 @@ public:
 	virtual std::vector<Eigen::ArrayXXi> state_list(Eigen::ArrayXXi state, int player) = 0;
 	virtual std::tuple<bool, int> is_over(Eigen::ArrayXXi state) = 0;
 	virtual void print_board(Eigen::ArrayXXi state) = 0;
-	virtual void play_vs_ai(Player * pplayer, int AI_player_num) = 0;
+	virtual void play_vs_ai(Player * pplayer, int AI_player_num, int lvl) = 0;
 };
 
 
