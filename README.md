@@ -1,6 +1,5 @@
 # GameAICpp
 Train and play an AI via  reinforcement learning + a neural network for a general game with specifiable rules.
-playing_generalPreOO.cpp is outdated and should not be used.  playing_general.cpp is the correct module.
 
 This code trains two AI players to play against each other in a given game.  Currently the game
 must be a game of complete information, with no randomness.  Each player uses a neural network

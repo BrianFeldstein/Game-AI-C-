@@ -176,7 +176,8 @@ tuple<vector<float>, vector<float>> learn(Game *pgame, Player *pplayer1, Player 
 		bool dotest = false;
 		if (i % 10000 < 1000) dotest = false;
 		if (i%1000 == 0)
-		{
+		{	clock_t t;
+			t = clock();	
 			cout << "(" << i <<" , " << learner << ")" << endl;
 			pg = play_game(pgame, pplayer1, pplayer2, learner, float(i)/game_num, dotest, true, gamma, eps);
 			int res = get<0>(pg);
@@ -191,6 +192,9 @@ tuple<vector<float>, vector<float>> learn(Game *pgame, Player *pplayer1, Player 
 			temp_avdv = 0;
 			num_ties = 0;
 			num_p1Wins = 0;
+			
+			t = clock()-t;
+			cout << "Time Taken: " << t << endl;
 			//plot ties list?		
 		}
 		else
@@ -247,7 +251,7 @@ int main()
 	{
 		//ConnectFour CFGame(6,7,4);	
 		pgame = new ConnectFour(6,7,4);//&CFGame;
-		folder = "ThetaC41000000p1/";
+		folder = "ThetaC44000000p1/";
 	}
 
 
@@ -267,7 +271,7 @@ int main()
 		Player *pplayer2 = &player2;
 
 		float gamma = 1; float eps = .1;
-		int NumGames = 1;
+		int NumGames = 4000000;
 		tuple<vector<float>, vector<float>> Data = learn(pgame, pplayer1, pplayer2, NumGames, gamma, eps);
 
 		ofstream x0file;
@@ -320,11 +324,13 @@ int main()
 				AIplayer.theta1 = readArray(folder + "theta1p2.txt");
 		}
 		pgame->play_vs_ai(pplayer, AI_player_num, lvl);
-	}
+	
 
-	string YorN;
-	cout << "Play Again? Y or N" << endl;
-	cin >> YorN;
-	if (YorN == "Y") return main();
-	else return 0;
+		string YorN;
+		cout << "Play Again? Y or N" << endl;
+		cin >> YorN;
+		if (YorN == "Y") return main();
+		else return 0;
+	}
+	return 0;
 }

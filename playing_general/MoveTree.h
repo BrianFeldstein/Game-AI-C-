@@ -46,11 +46,14 @@ public:
 
 		for(int i = 0; i < top->children.size(); i++)
 		{	
+			if (top->children[i]->val == 1) {maxvalind = i; current_val = 1; break;} 
 			current_res = val_from_future(top->children[i], levels);
 			current_val = std::get<0>(current_res);
 			current_ldiff = std::get<1>(current_res);
 			//std:: cout << current_val << " " << current_ldiff << std::endl;
-			if (current_val >= biggest_val-.000001 && current_ldiff >= biggest_ldiff) {biggest_val = current_val; biggest_ldiff = current_ldiff; maxvalind = i;}
+			//At present, if the AI has more than one guaranteed win of more than one move, it will choose the one which takes the longest.. not very friendly..
+			if (current_val > biggest_val || (current_val >= biggest_val-.000001 && current_ldiff >= biggest_ldiff) ) {biggest_val = current_val; biggest_ldiff = current_ldiff; maxvalind = i;}
+			std::cout << current_val << std::endl;
 		}
 		next_state = top->children[maxvalind]->state;
 	}

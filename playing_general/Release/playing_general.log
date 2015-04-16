@@ -1,4 +1,4 @@
-﻿Build started 4/7/2015 2:23:48 PM.
+﻿Build started 4/16/2015 3:57:59 PM.
      1>Project "C:\Users\Brian\Documents\Visual Studio 2010\Projects\playing_general\playing_general\playing_general.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\playing_general.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -8,12 +8,12 @@
      1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\Player.h(62): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(22): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(47): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(65): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(71): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(86): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>playing_general.cpp(208): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>playing_general.cpp(259): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(68): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(74): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(89): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\MoveTree.h(94): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>playing_general.cpp(222): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>playing_general.cpp(273): warning C4305: 'initializing' : truncation from 'double' to 'float'
      1>C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\tuple(137): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\tuple(396) : see reference to function template instantiation 'std::tr1::_Cons_node<_Car,_Cdr>::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>>(std::tr1::_Cons_node<_Arg0,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Cons_node<Eigen::CwiseUnaryOp<UnaryOp,XprType>,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>>> &&)' being compiled
                  with
@@ -81,7 +81,7 @@
                      _Cdr=std::tr1::_Cons_node<float,std::tr1::_Tuple_type<std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>::_Type>,
                      _Arg0=int
                  ]
-                 playing_general.cpp(143) : see reference to function template instantiation 'std::tr1::tuple<_Arg0,_Arg1>::tuple<int,int,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>(std::tr1::tuple<_Arg0,int,_Arg2,_Arg3,_Arg4,_Arg5,_Arg6,_Arg7,_Arg8,_Arg9> &&)' being compiled
+                 playing_general.cpp(153) : see reference to function template instantiation 'std::tr1::tuple<_Arg0,_Arg1>::tuple<int,int,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil,std::tr1::_Nil>(std::tr1::tuple<_Arg0,int,_Arg2,_Arg3,_Arg4,_Arg5,_Arg6,_Arg7,_Arg8,_Arg9> &&)' being compiled
                  with
                  [
                      _Arg0=int,
@@ -98,7 +98,7 @@
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Brian\Documents\Visual Studio 2010\Projects\playing_general\Release\playing_general.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\playing_general.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Brian\Documents\Visual Studio 2010\Projects\playing_general\Release\playing_general.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Brian\Documents\Visual Studio 2010\Projects\playing_general\Release\playing_general.lib" /MACHINE:X86 Release\playing_general.obj
          Generating code
-     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\movetree.h(104): warning C4715: 'move_tree::val_from_future' : not all control paths return a value
+     1>c:\users\brian\documents\visual studio 2010\projects\playing_general\playing_general\movetree.h(107): warning C4715: 'move_tree::val_from_future' : not all control paths return a value
          Finished generating code
          playing_general.vcxproj -> C:\Users\Brian\Documents\Visual Studio 2010\Projects\playing_general\Release\playing_general.exe
        Manifest:
@@ -110,4 +110,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:14.42
+Time Elapsed 00:00:15.20

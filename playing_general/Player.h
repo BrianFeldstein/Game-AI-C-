@@ -9,7 +9,7 @@
 #include "Game.h"
 //#include "MoveTree.h"
 
-class MoveTree;
+//class MoveTree;
 
 class Player
 {
